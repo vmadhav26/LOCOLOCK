@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locolock</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+</head>
+<body>
+    <div class="welcome-screen">
+        <h1 style="font-family: Algerian; background: linear-gradient(to right, pink, violet); -webkit-background-clip: text; color: transparent;">
+            Locolock
+        </h1>
+        <p>Locking the Location</p>
+    </div>
+
+    <div class="container">
+        <!-- Navigation Bar -->
+        <div class="navbar">
+            <h2 style="color: white;">Navigate with Locolock</h2>
+        </div>
+
+        <!-- Login and Signup -->
+        <div id="authSection">
+            <div id="loginSection" class="auth-section">
+                <h2>Login to Locolock</h2>
+                <input type="email" id="loginEmail" placeholder="Enter your email">
+                <input type="password" id="loginPassword" placeholder="Enter your password">
+                <input type="checkbox" id="showPassword"> Show Password
+                <button id="loginBtn">Login</button>
+                <p><a href="#" id="goToSignupLink">New here? Signup</a></p>
+            </div>
+
+            <div id="signupSection" class="auth-section" style="display: none;">
+                <h2>Signup for Locolock</h2>
+                <input type="email" id="signupEmail" placeholder="Enter your email">
+                <input type="text" id="signupPhone" placeholder="Enter your mobile number">
+                <input type="password" id="signupPassword" placeholder="Create a password">
+                <input type="password" id="signupConfirmPassword" placeholder="Confirm your password">
+                <button id="signupBtn">Signup</button>
+                <p><a href="#" id="goToLoginLink">Already have an account? Login</a></p>
+            </div>
+        </div>
+
+        <!-- Main Portal -->
+        <div id="mainPortal" style="display:none;">
+            <h1>Welcome to Locolock</h1>
+            <div class="feature-selection">
+                <button id="locationReminderBtn">Location-Based Reminder</button>
+                <button id="taskManagementBtn">Task Management</button>
+            </div>
+
+            <!-- Location Reminder -->
+            <div id="locationReminder" class="feature-section" style="display: none;">
+                <h2>Set Location-Based Reminder</h2>
+                <div id="mapLocation" style="height: 300px;"></div>
+                <input type="text" id="destination" placeholder="Enter destination or mark on map">
+                <button id="setLocationReminderBtn">Set Geofence</button>
+            </div>
+
+            <!-- Task Management -->
+            <div id="taskManagement" class="feature-section" style="display: none;">
+                <h2>Task Management</h2>
+                <input type="text" id="taskDescription" placeholder="Task Description">
+                <div id="mapTask" style="height: 300px;"></div>
+                <input type="text" id="taskLocation" placeholder="Set Task Location">
+                <h3>Preferred List</h3>
+                <input type="text" id="preferredPerson" placeholder="Enter name">
+                <button id="addPersonBtn">Add to Preferred List</button>
+                <ul id="preferredList"></ul>
+                <button id="assignTaskBtn">Assign Task</button>
+                <div id="taskResponses">
+                    <!-- Task Responses (Accept/Deny) will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
